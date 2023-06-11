@@ -1,0 +1,223 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  margin-left: 60%;
+  margin-bottom: 100px;
+  margin-right: 0px;
+}
+
+p {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+}
+
+.top-left-msg {
+  color: #35334f;
+  font-size: 40px;
+  font-weight: 600;
+  width: 34%;
+  margin: 68px 0 0 98px;
+}
+
+.bottom-right-msg {
+  color: #0a519b;
+  font-size: 23px;
+  font-weight: 600;
+  width: 68%;
+  margin-left: 24px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  color: #35334f;
+  margin: 12px 0;
+  width: 70%;
+  font-family: "Roboto", sans-serif;
+}
+
+ul li::before {
+  /* \2022 is the CSS Code/unicode for a disc */
+  content: "\2022";
+  color: red;
+  display: inline-block;
+  width: 1em;
+  margin-left: -0.9em;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.balloons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 20px;
+  height: 200px;
+  font-weight: 600;
+  color: white;
+}
+
+.balloon {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  font-size: 30px;
+  margin: 0;
+  background-image: linear-gradient(to right, #744c8c, #ce4a71);
+  border-radius: 50%;
+  border: 2px dashed #e8e8e8;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: transparent;
+  background-clip: content-box;
+  cursor: none;
+}
+
+.balloon-1,
+.balloon-2,
+.balloon-3,
+.balloon-4,
+.balloon-5 {
+  position: relative;
+}
+
+.balloon-3,
+.balloon-4 {
+  width: 250px;
+  height: 250px;
+}
+
+.balloon-1 {
+  bottom: 140px;
+  left: 144px;
+}
+
+.balloon-2 {
+  left: 148px;
+}
+
+.balloon-3 {
+  left: 84px;
+  bottom: 228px;
+}
+
+.balloon-4 {
+  left: 148px;
+  bottom: 444px;
+}
+
+.balloon-5 {
+  left: 218px;
+  bottom: 422px;
+}
+
+sup {
+  font-size: smaller;
+  vertical-align: super;
+}
+
+.squared::after {
+  content: "²";
+}
+
+.cursor {
+  position: absolute;
+  border: 2px solid #f06a73;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+  transition: transform 0.3s linear;
+}
+
+.balloon::before,
+.balloon::after {
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: ripple 3s infinite;
+}
+
+.balloon::before {
+  animation-delay: 0.9s;
+}
+
+.balloon::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.cursor.ripple {
+  transform: translate(-50%, -50%) scale(1.4);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.cursor.ripple::before,
+.cursor.ripple::after {
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 137, 137, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.cursor.ripple::before,
+.cursor.ripple::after {
+  animation: ripple 2s infinite;
+}
+
+.cursor.ripple::before {
+  animation-delay: 0.9s;
+}
+
+.cursor.ripple::after {
+  animation-delay: 0.5s;
+}
